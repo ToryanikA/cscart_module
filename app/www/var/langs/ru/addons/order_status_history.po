@@ -1,0 +1,38 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cs-cart-latest\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: Russian\n"
+"Language: ru_RU\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"X-Crowdin-Project: cs-cart-latest\n"
+"X-Crowdin-Project-ID: 50163\n"
+"X-Crowdin-Language: ru\n"
+
+msgctxt "Languages::orders_status_history"
+msgid "Orders status history"
+msgstr "История изменения статусов заказов"
+
+msgctxt "Languages::osh.order_id"
+msgid "Order ID"
+msgid "ID заказа"
+
+msgctxt "Languages::osh.status_old"
+msgid "Status old"
+msgid "Старый статус"
+
+msgctxt "Languages::osh.status_new"
+msgid "Status new"
+msgid "Новый статус"
+
+msgctxt "Languages::osh.username"
+msgid "Username"
+msgid "Кем изменен"
+
+msgctxt "Languages::osh.date"
+msgid "Date"
+msgid "Дата изменения"
+
+msgctxt "Languages::osh.not_found"
+msgid "Not found"
+msgid "Не найдено"

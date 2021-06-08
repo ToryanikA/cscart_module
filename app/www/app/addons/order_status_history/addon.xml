@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<addon scheme="3.0" edition_type="ROOT,ULT:VENDOR">
+	<id>order_status_history</id>
+	<name>History of changes in order statuses</name>
+	<description>Module for displaying the history of order statuses</description>
+	<translations>
+		<item for="name" lang="ru">История изменения статусов заказов</item>
+		<item for="description" lang="ru">Модуль для отображения истории статусов заказа</item>
+	</translations>
+	<version>1.0</version>
+	<default_language>en</default_language>
+	<priority>100</priority>
+	<status>active</status>
+	<auto_install>MULTIVENDOR,ULTIMATE</auto_install>
+	<queries>
+		<item>
+			DROP TABLE IF EXISTS ?:order_status_history;
+		</item>
+		<item for="install">
+			CREATE TABLE ?:order_status_history (
+			`id` bigint unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
+			`order_id` mediumint(8) unsigned,
+			`status_old` char(1),
+			`status_new` char(1),
+			`user_id` mediumint(8) unsigned,
+			`created_at` timestamp,
+			CONSTRAINT orders_history_fk  FOREIGN KEY (order_id) REFERENCES ?:orders (order_id) ON DELETE CASCADE,
+			CONSTRAINT users_history_fk FOREIGN KEY (user_id) REFERENCES ?:users (user_id) ON DELETE SET NULL
+			) ENGINE='MyISAM' DEFAULT CHARSET=utf8;
+
+		</item>
+		<item for="uninstall">
+			ALTER TABLE ?:order_status_history
+			DROP FOREIGN KEY orders_history_fk;
+		</item>
+		<item for="uninstall">
+			ALTER TABLE ?:order_status_history
+			DROP FOREIGN KEY users_history_fk;
+		</item>
+		<item for="uninstall">
+			DROP TABLE IF EXISTS ?:order_status_history;
+		</item>
+	</queries>
+</addon>
